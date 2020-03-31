@@ -39,7 +39,7 @@ CMD ["/bin/s6-svscan", "/etc/s6"]
 
 COPY root /
 
-RUN curl -sL -o /app/gitea/gitea https://dl.gitea.io/gitea/1.11.3/gitea-1.11.3-linux-arm-6 \
-    && chmod a+x /app/gitea/gitea
+RUN curl -sL https://dl.gitea.io/gitea/1.11.3/gitea-1.11.3-linux-arm-6 > /app/gitea/gitea \
+    && chmod +x /app/gitea/gitea
 
 RUN ln -s /app/gitea/gitea /usr/local/bin/gitea
